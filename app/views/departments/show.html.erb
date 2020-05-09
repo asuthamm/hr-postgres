@@ -1,0 +1,10 @@
+
+<h1>Department: <%=@department.name%>:</h1>
+<div class='pageAll'>
+    <ul>
+        <%@department.employees.each do |emp|%>
+            <li><%=link_to emp.name, emp%>, <%=emp.title.name%> in <%=emp.department.name%> department</li>
+            <br>
+        <%end%>
+    </ul>   
+</div>

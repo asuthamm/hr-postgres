@@ -1,0 +1,40 @@
+// Place all the styles related to the Employees controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+h1 {
+    color: rgba(7, 7, 182, 0.904);
+    background-color: rgb(163, 213, 227);
+    border: 1px solid blue;
+    margin: 1px;
+}
+.sub_lst {
+    color: rgb(146, 146, 228);
+}
+
+.subordinate_box {
+    border: 1px solid blue;
+    margin: 2px;
+    padding: 10px
+}
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+  }
+
+  .inner
+  {
+    padding: 5px 10px;
+    display: inline-block;
+  }
+
+  .img {
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    float: center;
+  }
+

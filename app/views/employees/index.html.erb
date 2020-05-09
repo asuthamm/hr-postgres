@@ -1,0 +1,18 @@
+
+
+    <div class='inner'><%= button_to 'Create New Employee', new_employee_path, :method => :get %></div>
+    <div class='inner'><%= button_to 'Log out', logout_path, :method => :delete %></div>
+
+
+    <h1>All Employees</h1>
+<div class='pageAll'>
+    <div class='formAll'>
+        <br>
+        <%@employees.each do |employee|%>
+            <%=link_to employee.name, employee%><br>
+        <%end%>
+    </div>
+    <br><br>
+</div>
+
+     

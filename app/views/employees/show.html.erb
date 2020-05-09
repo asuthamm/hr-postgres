@@ -1,0 +1,42 @@
+<div class="inner"><%= button_to 'Main', employees_path, :method => :get %></div>
+<div class="inner"><%= button_to 'Edit', edit_employee_path, :method => :get %></div>
+<div class="inner"><%= button_to "delete", nil, :method => :delete %></div>
+
+<h1><%=@employee.name%></h1>
+
+<div class='pageAll'>
+    
+    <div class='formAll'>
+        ----------------------------------------------------------------------------------     
+        <h4><%=@employee.title.name%>,  <%=link_to @employee.department.name, department_path(@employee.department_id)%></h4>
+        
+        Work Location: <%=link_to @employee.location.site, location_path(@employee.location_id)%>
+        <br><br>
+        Reporting To:
+        <%if !!@employee.manager == true%>
+            <%=link_to @employee.manager.name, @employee.manager%><br>
+        <%end%>
+        <br><br>
+
+        <strong>My Subordinates:</strong>
+        <ul class=subordinatce_box>
+
+            <%@employee.subordinates.each do |emp|%>
+                <br>
+                <li><%=link_to emp.name, emp%>, <%=emp.title.name%> in <%=emp.department.name%></li>
+                
+                <%if !emp.subordinates.empty?%>
+                    <div class='sub_lst'><ul>
+                    <%emp.subordinates.each do |sub|%>
+                        <li><%=sub.name%></li>
+                    <%end%>
+                    </ul></div>
+                <%end%>
+            <%end%>
+        </ul>
+    </div>
+
+    <div class='img'>
+        <%= image_tag @employee.photo.url(:medium) %><br>
+    </div>
+</div>

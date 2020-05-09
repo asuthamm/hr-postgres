@@ -1,0 +1,25 @@
+<h1>Updating Employee</h1>
+
+<div class='pageAll'>
+
+<div class='formAll'>
+<%=form_for @employee do |f|%>
+    <br>
+    <%=f.label :name%>
+    <%=f.text_field :name%>
+    <%= f.label :title_id %>
+    <%=f.collection_select :title_id, Title.all, :id, :name%>
+    <%= f.label :department_id %>
+    <%=f.collection_select :department_id, Department.order(:name), :id, :name%>
+    <br><br>
+    <%= f.label :location_id %>
+    <%=f.collection_select :location_id, Location.all, :id, :site%>
+    <%= f.label :manager_id %>
+    <%=f.collection_select :manager_id, Employee.order(:name), :id, :name%>
+    <%= f.file_field :photo %>
+
+    <%=f.submit%>
+<%end%>
+</div>
+</div>
+
